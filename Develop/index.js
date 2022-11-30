@@ -2,8 +2,6 @@
 const inquirer=require("inquirer");
 const fs=require("fs");
 
-
-
 // TODO: Create an array of questions for user input
 const questions = [];
 
@@ -30,7 +28,7 @@ function init() {
         },
         {
             name:"usage",
-            message:"What instructions and examples were used for the project?",
+            message:"Any screenshots used for the project?",
             type:"input"
         },
         {
@@ -91,7 +89,7 @@ function init() {
     ${answers.installationInstructions}
     
     ## Usage 
-    ${answers.usage}
+    The screenshot demonstrates the README: ${answers.usage}
     
     ## Contribution 
     ${answers.contribution}
