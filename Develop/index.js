@@ -28,7 +28,7 @@ function init() {
         },
         {
             name:"usage",
-            message:"Any screenshots used for the project?",
+            message:"Any examples used for the project?",
             type:"input"
         },
         {
@@ -61,51 +61,52 @@ function init() {
         }, 
     ]).then((answers) => {
         console.log(answers)
-        const README = `
-    
-    # Title
-    ${answers.title}
-    
-    ## Author
-    Lisette Morales 
-    
-    [![License: ${answers.license}](https://img.shields.io/badge/License-${answers.license}-yellow.svg)](https://opensource.org/licenses/${answers.license})
-    
-    ## Description
-    ${answers.description}
-    
-    ## Table of Contents 
-    * [Title](#title)
-    * [Description](#description)
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [License](#license)
-    * [Contribution](#contribution)
-    * [Tests](#tests)
-    * [Questions](#questions)
-    
-    
-    ## Installation 
-    ${answers.installationInstructions}
-    
-    ## Usage 
-    The screenshot demonstrates the README: ${answers.usage}
-    
-    ## Contribution 
-    ${answers.contribution}
-    
-    ## Tests 
-    ${answers.tests}
-    
-    ## License
-    The project is under this: ${answers.license}
-    
-    ## Questions 
-    GitHub Username: ${answers.gitHubUsername}
-    GitHub Profile link: https://lisette33.github.io/Portfolio/
-    Email Address: ${answers.emailAddress}
-    You can contact me by my email address. `
-    
+    const README = `
+
+# Title
+${answers.title}
+
+## Author
+Lisette Morales 
+
+[![License: ${answers.license}](https://img.shields.io/badge/License-${answers.license}-yellow.svg)](https://opensource.org/licenses/${answers.license})
+
+## Description
+${answers.description}
+
+## Table of Contents 
+* [Title](#title)
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contribution](#contribution)
+* [Tests](#tests)
+* [Questions](#questions)
+
+## Installation 
+${answers.installationInstructions}
+
+## Usage 
+The example demonstrates the README for use: ${answers.usage}
+
+## Contribution 
+${answers.contribution}
+
+## Tests 
+${answers.tests}
+
+## License
+The project is under this: ${answers.license}
+
+## Questions 
+GitHub Username: ${answers.gitHubUsername}
+
+GitHub Profile link: [https://lisette33.github.io/Portfolio/](https://lisette33.github.io/Portfolio/)
+
+Email Address: ${answers.emailAddress}
+(You can contact me by my email address.) `
+     
         // console.log(response);
         fs.writeFile('./README.md', README, (err) =>
             err ? console.log(err) : console.log('Successfully created README.md')
